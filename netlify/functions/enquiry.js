@@ -22,8 +22,8 @@ export async function handler(event) {
 
     await resend.emails.send({
       from: "AI Smart Hub <noreply@aismarthub.biz>",
-      to: ["demo@aismarthub.biz"],
-      subject: "New Chat Enquiry",
+      to: ["aismarthub.alerts@gmail.com"],
+      subject: "Enquiry From Website",
       html: `
         <h2>New Enquiry</h2>
         <p><strong>Name:</strong> ${name}</p>
