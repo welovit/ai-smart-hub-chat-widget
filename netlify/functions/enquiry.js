@@ -22,7 +22,7 @@ export async function handler(event) {
 
     await resend.emails.send({
       from: "AI Smart Hub <noreply@aismarthub.biz>",
-      to: ["info@aismarthub.biz"],
+      to: ["demo@aismarthub.biz"],
       subject: "New Chat Enquiry",
       html: `
         <h2>New Enquiry</h2>
