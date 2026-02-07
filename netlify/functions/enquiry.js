@@ -9,12 +9,8 @@ const headers = {
 };
 
 export async function handler(event) {
-  // Handle CORS preflight
   if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers
-    };
+    return { statusCode: 200, headers };
   }
 
   try {
@@ -25,28 +21,25 @@ export async function handler(event) {
       to: ["aismarthub.alerts@gmail.com"],
       subject: "Enquiry From Website",
       html: `
-  <h2>New Enquiry</h2>
-  <p><strong>Name:</strong> ${name}</p>
-  <p><strong>Email:</strong> ${email}</p>
-  <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-  <p><strong>Message:</strong><br/>${message}</p>
-`
-
+        <h2>New Enquiry</h2>
+        <p><strong>Name:</strong> ${name || ""}</p>
+        <p><strong>Email:</strong> ${email || ""}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Message:</strong><br/>${message || ""}</p>
       `
     });
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ success: true })
+      body: JSON.stringify({ ok: true })
     };
   } catch (err) {
     console.error("Enquiry error:", err);
-
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: "Failed to send email" })
+      body: JSON.stringify({ ok: false, error: "send_failed" })
     };
   }
 }
