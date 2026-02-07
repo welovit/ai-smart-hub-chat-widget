@@ -13,6 +13,7 @@
       intro: "Tell us what’s going on and we’ll get this straight to the team.",
       fontFamily: "Arial, Helvetica, sans-serif",
       privacyUrl: "/privacy",
+      endpoint: "https://aismarthub-chat-widget.netlify.app/.netlify/functions/enquiry",
 
       // Button
       buttonText: "👋 Need help?",
@@ -28,6 +29,8 @@
       endpoint: "https://ai-smart-hub-chat-widget.netlify.app/.netlify/functions/enquiry",
 
       ...((window.MYCW_CONFIG) ? window.MYCW_CONFIG : {})
+     
+
     };
 
     // Prevent double-inject
