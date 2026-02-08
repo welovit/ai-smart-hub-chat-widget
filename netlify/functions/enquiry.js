@@ -17,8 +17,8 @@ export async function handler(event) {
     const { name, email, phone, message } = JSON.parse(event.body || "{}");
 
     await resend.emails.send({
-      from: "AI Smart Hub <noreply@aismarthub.biz>",
-      to: ["aismarthub.alerts@gmail.com"],
+      from: "AI Smart Hub <noreply@aismarthub.online>",
+      to: ["chat@aismarthub.biz"],
       subject: "Enquiry From Website",
       html: `
         <h2>New Enquiry</h2>
