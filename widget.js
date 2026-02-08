@@ -297,7 +297,8 @@
       e.preventDefault();
 
       const data = new FormData(form);
-      const payload = {
+     const payload = {
+	      accountId: cfg.accountId,
         name: (data.get("name") || "").toString().trim(),
         email: (data.get("email") || "").toString().trim(),
         phone: (data.get("phone") || "").toString().trim(),
@@ -305,7 +306,7 @@
         website: (data.get("website") || "").toString().trim(), // honeypot
         pageUrl: window.location.href,
         ts: new Date().toISOString()
-      };
+      };;
 
       // Honeypot hit => silently pretend success
       if (payload.website) {
