@@ -1,5 +1,11 @@
 import { Resend } from "resend";
 
+const ACCOUNT_EMAILS = {
+  fred_bloggs: "frintonbuzz@gmail.com",
+  roofer_demo: "chat@aismarthub.biz"
+};
+
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const headers = {
