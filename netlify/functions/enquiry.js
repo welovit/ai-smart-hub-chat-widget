@@ -59,9 +59,9 @@ export async function handler(event) {
     await resend.emails.send({
       from: "AI Smart Hub <noreply@aismarthub.online>",
       to: toEmail,
-      subject: `New enquiry (${cleanAccountId || "unknown"})`,
+      subject: `Website Enquiry For (${cleanAccountId || "unknown"})`,
       html: `
-        <h2>New Enquiry</h2>
+        <h2>Website Enquiry</h2>
         <p><strong>Name:</strong> ${name || "-"}</p>
         <p><strong>Email:</strong> ${email || "-"}</p>
         <p><strong>Phone:</strong> ${phone || "-"}</p>
